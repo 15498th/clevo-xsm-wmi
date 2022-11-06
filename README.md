@@ -2,11 +2,11 @@
 Kernel module for controlling keyboard backlighting of some Clevo and Clevo-based laptops.
 
 ### Original repo notes
-Development of [repository](https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi/) this code was taken from was moved to [tuxedocomputers/tuxedo-keyboard](https://github.com/tuxedocomputers/tuxedo-keyboard) (see [issue 44](https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi/issues/44/the-status-and-the-future-of-tuxedo-clevo) on bitbucket). It's probably better to try using it before resorting to this one.
+Development of the [repository](https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi/) this code was taken from was moved to [tuxedocomputers/tuxedo-keyboard](https://github.com/tuxedocomputers/tuxedo-keyboard) (see [issue 44](https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi/issues/44/the-status-and-the-future-of-tuxedo-clevo) on bitbucket). It's probably better to try using it before resorting to this one.
 
 ### Adapting code to load on not officially supported models
 This module has hardcoded list of supported models (see master branch [readme](https://github.com/15498th/clevo-xsm-wmi/tree/master#supported-devices)), and won't load on laptops not recognised as supported.
-Nevertheless it might also work on other models, so these willing to try it can edit code according to this post https://forums.linuxmint.com/viewtopic.php?t=287190:
+Nevertheless it might also work on other models, so those willing to try it can edit code according to this post https://forums.linuxmint.com/viewtopic.php?t=287190:
 
 - run `sudo dmidecode` and go through output from the top, looking for line with `Product Name`. Alternatively, run `sudo dmidecode -H 1`
 - open module/clevo-xsm-wmi.c and navigate to line [1414](https://github.com/15498th/clevo-xsm-wmi/blob/DreamMachines_NH50_70RA_support/module/clevo-xsm-wmi.c#L1414)
@@ -25,7 +25,7 @@ Nevertheless it might also work on other models, so these willing to try it can 
  - if first entry doesn't work, try one with different `.driver_data`
  
  ### Building and testing module
-With working directory set to module/ run `make`. If build was successful, it should be possible to load module with 
+With working directory set to module/, run `make`. If build was successful, it should be possible to load module with 
 ```
 sudo insmod clevo-xsm-wmi.ko
 ```
